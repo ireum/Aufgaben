@@ -34,6 +34,11 @@ class Book
         return $this->author;
     }
 
+    public function getAuthorName(): string
+    {
+        return $this->author->getFirstName() . ' ' . $this->author->getLastName();
+    }
+
     public function getReleaseYear(): DateTime
     {
         return $this->releaseYear;
