@@ -21,8 +21,17 @@ class AuthorTest extends TestCase
         $this->assertSame('firstname', $this->author->getFirstName());
     }
 
+    public function testGetEmailReturnsEmailInsertedByConstructor()
+    {
+        $this->assertSame('example@email.com', $this->author->getEmail());
+    }
 
-
+    public function testSetEmailThrowsExceptionIfEmailIsInvalid()
+    {
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage('invalid email');
+        $this->author->setEmail('invalidemail.com');
+    }
 
 
 

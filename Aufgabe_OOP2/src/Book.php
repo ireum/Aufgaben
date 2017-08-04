@@ -5,7 +5,7 @@ class Book
 {
     /** @var  string */
     private $title;
-    /** @var  string */
+    /** @var  Author */
     private $author;
     /** @var  DateTime */
     private $releaseYear;
@@ -14,9 +14,14 @@ class Book
     /** @var  string */
     private $genre;
 
-    public function __construct(string $title, string $author, DateTime $releaseYear, int $numberOfPages, string $genre)
+    public function __construct(string $title, Author $author, DateTime $releaseYear, int $numberOfPages, string $genre)
     {
-        
+        $this->$title = $title;
+        $this->author = $author;
+        $this->releaseYear = $releaseYear;
+        $this->setNumberOfPages($numberOfPages);
+        $this->genre = $genre;
+
     }
 
     public function getTitle(): string
@@ -24,7 +29,7 @@ class Book
         return $this->title;
     }
 
-    public function getAuthor(): string
+    public function getAuthor(): Author
     {
         return $this->author;
     }
@@ -44,28 +49,12 @@ class Book
         return $this->genre;
     }
 
-    public function setTitle($value)
+    public function setNumberOfPages(int $value)
     {
-        $this->title = $value;
-    }
-
-    public function setAuthor($value)
-    {
-        $this->author = $value;
-    }
-
-    public function setReleaseYear($value)
-    {
-        $this->releaseYear = $value;
-    }
-
-    public function setNumberOfPages($value)
-    {
+        if (!filter_var($value, FILTER_VALIDATE_INT, array('options' => array('min_range' => 1, 'max_range' => 99999))))
+        {
+            throw new Exception('invalid number of pages');
+        }
         $this->numberOfPages = $value;
-    }
-
-    public function setGenre($value)
-    {
-        $this->genre = $value;
     }
 }

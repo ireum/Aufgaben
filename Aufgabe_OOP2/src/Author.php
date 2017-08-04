@@ -13,7 +13,7 @@ class Author
     public function __construct(string $lastName, string $firstName, string $email)
     {
         $this->setLastName($lastName);
-        $this->setFirstName($firstName);
+        $this->firstName = $firstName;
         $this->setEmail($email);
     }
 
@@ -32,14 +32,9 @@ class Author
         return $this->email;
     }
 
-    public function  setLastName(string $value)
+    public function setLastName(string $value)
     {
         $this->lastName = $value;
-    }
-
-    public function  setFirstName(string $value)
-    {
-        $this->firstName = $value;
     }
 
     public function  setEmail(string $value)
