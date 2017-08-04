@@ -10,11 +10,12 @@ class BookTest extends TestCase
 {
     /** @var  Book */
     private $book;
+    /** @var PHPUnit_Framework_MockObject_MockObject|Author */
     private $author;
 
     protected function setUp()
     {
-        $this->author = new Author('lastname', 'firstname', 'example@email.com');
+        $this->author = $this->getMockBuilder(Author::class)->disableOriginalConstructor()->getMock();
         $this->book = new Book('title', $this->author, DateTime::createFromFormat('Y', 2000), 100, 'genre');
     }
 
