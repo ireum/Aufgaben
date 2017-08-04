@@ -1,6 +1,9 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers Author
+ */
 class AuthorTest extends TestCase
 {
     /** @var  Author */

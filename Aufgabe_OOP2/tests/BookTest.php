@@ -2,6 +2,10 @@
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers Book
+ * @uses Author
+ */
 class BookTest extends TestCase
 {
     /** @var  Book */
