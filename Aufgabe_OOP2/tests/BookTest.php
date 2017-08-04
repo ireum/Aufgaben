@@ -51,4 +51,11 @@ class BookTest extends TestCase
     {
         $this->assertSame('genre', $this->book->getGenre());
     }
+
+    public function testGetAuthorNameReturnsNameOfTheAuthor()
+    {
+        $this->author->expects($this->once())->method('getFirstName')->willReturn('sdfsdf');
+        $this->author->expects($this->once())->method('getLastName')->willReturn('sudarta');
+        $this->assertSame('sdfsdf sudarta', $this->book->getAuthorName());
+    }
 }
