@@ -5,7 +5,7 @@ class Author
 {
     /** @var  string */
     private $lastName;
-    /** @var  string */
+    /** @var string */
     private $firstName;
     /** @var  string */
     private $email;
@@ -39,8 +39,7 @@ class Author
 
     public function  setEmail(string $value)
     {
-        if (!filter_var($value, FILTER_VALIDATE_EMAIL))
-        {
+        if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
             throw new Exception('invalid email');
         }
         $this->email = $value;

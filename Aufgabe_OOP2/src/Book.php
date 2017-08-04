@@ -51,8 +51,7 @@ class Book
 
     public function setNumberOfPages(int $value)
     {
-        if (!filter_var($value, FILTER_VALIDATE_INT, array('options' => array('min_range' => 1, 'max_range' => 99999))))
-        {
+        if (!filter_var($value, FILTER_VALIDATE_INT, array('options' => array('min_range' => 1, 'max_range' => 99999)))) {
             throw new Exception('invalid number of pages');
         }
         $this->numberOfPages = $value;
