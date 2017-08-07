@@ -28,4 +28,9 @@ class Rectangle implements Figure
     {
         return sqrt(pow($this->width, 2) + pow($this->length, 2));
     }
+
+    protected function getWidth(): float
+    {
+        return $this->width;
+    }
 }
