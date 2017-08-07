@@ -17,16 +17,16 @@ class RectangleTest extends TestCase
         $this->rectangle = new Rectangle(5.0, 12.0);
     }
 
-    public function testGetWidthReturnsWidthInsertedByConstructor()
+    public function testCorrectWidthInsertedByConstructor()
     {
-        $this->assertSame(5.0, $this->rectangle->getWidth());
+        $this->assertSame(5.0, $this->rectangle->getArea() / 12.0);
     }
 
-    public function testGetLengthReturnsLengthInsertedByConstructor()
+    public function testCorrectLengthInsertedByConstructor()
     {
-        $this->assertSame(12.0, $this->rectangle->getLength());
+        $this->assertSame(12.0, $this->rectangle->getArea() / 5.0);
     }
-
+    
     public function testGetCircumferenceReturnsCorrectCircumference()
     {
         $this->assertSame(34.0, $this->rectangle->getCircumference());

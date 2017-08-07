@@ -1,16 +1,26 @@
 <?php
 
 
-class Square extends Rectangle implements Figure
+class Square extends Rectangle
 {
+    /** @var  float */
+    private $side;
+
     public function __construct(float $sideLength)
     {
-        $this->width = $sideLength;
-        $this->length = $sideLength;
+        $this->side = $sideLength;
+        parent::__construct($sideLength, $sideLength);
     }
 
-    public function getSide(): float
+    public function getCircumference(): float
     {
-        return $this->width;
+        return $this->side * 4;
     }
+
+    public function getDiagonal(): float
+    {
+        return $this->side * sqrt(2);
+    }
+    
 }
+

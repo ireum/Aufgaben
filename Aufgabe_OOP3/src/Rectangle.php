@@ -4,19 +4,9 @@
 class Rectangle implements Figure
 {
     /** @var float */
-    protected $width;
+    private $width;
     /** @var float */
-    protected $length;
-
-    public function getWidth(): float
-    {
-        return $this->width;
-    }
-
-    public function getLength(): float
-    {
-        return $this->length;
-    }
+    private $length;
 
     public function __construct(float $width, float $length)
     {
@@ -38,5 +28,4 @@ class Rectangle implements Figure
     {
         return sqrt(pow($this->width, 2) + pow($this->length, 2));
     }
-
 }

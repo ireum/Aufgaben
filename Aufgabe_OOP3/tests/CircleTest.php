@@ -15,9 +15,9 @@ class CircleTest extends TestCase
         $this->circle = new Circle(5.0);
     }
 
-    public function testGetRadiusReturnsRadiusInsertedByConstructor()
+    public function testCorrectRadiusInsertedByConstructor()
     {
-        $this->assertSame(5.0, $this->circle->getRadius());
+        $this->assertSame(5.0, $this->circle->getDiagonal() / 2);
     }
 
     public function testGetCircumferenceReturnsCorrectCircumference()

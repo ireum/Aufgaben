@@ -11,11 +11,6 @@ class Circle implements Figure
         $this->radius = $radius;
     }
 
-    public function getRadius(): float
-    {
-        return $this->radius;
-    }
-
     public function getCircumference(): float
     {
         return 2 * pi() * $this->radius;
@@ -30,5 +25,4 @@ class Circle implements Figure
     {
         return $this->radius * 2;
     }
-
 }

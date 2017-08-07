@@ -17,19 +17,19 @@ class SquareTest extends TestCase
         $this->square = new Square(4.0);
     }
 
-    public function testGetWidthReturnsSideInsertedByConstructor()
+//    public function testGetWidthReturnsSideInsertedByConstructor()
+//    {
+//        $this->assertSame(4.0, $this->square->getWidth());
+//    }
+//
+//    public function testGetLengthReturnsSideInsertedByConstructor()
+//    {
+//        $this->assertSame(4.0, $this->square->getLength());
+//    }
+//
+    public function testCorrectSideInsertedByConstructor()
     {
-        $this->assertSame(4.0, $this->square->getWidth());
-    }
-
-    public function testGetLengthReturnsSideInsertedByConstructor()
-    {
-        $this->assertSame(4.0, $this->square->getLength());
-    }
-
-    public function testGetSideReturnsSideInsertedByConstructor()
-    {
-        $this->assertSame(4.0, $this->square->getSide());
+        $this->assertSame(4.0, sqrt($this->square->getArea()));
     }
 
     public function testGetCircumferenceReturnsCorrectCircumference()
